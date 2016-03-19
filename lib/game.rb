@@ -8,6 +8,15 @@ class Game
     @current_player = player_1
     @opponent = player_2
   end
+
+  def self.instance
+    @game ||= Game.new
+  end
+
+  def self.create(player_1, player_2)
+  @game = Game.new(player_1, player_2)
+  end
+  
   #require 'pry'; binding.pry
   def attack(player)
    player.be_attacked
